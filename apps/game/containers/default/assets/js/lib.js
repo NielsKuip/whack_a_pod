@@ -223,6 +223,7 @@ function POD(json){
 
 function PODSUI(pods, logwindow){
     var pods = pods;
+    console.log('PODSPDSOPDSO' + pods);
     if (typeof(logwindow)==='undefined') logwindow = new LOGWINDOW();
 
     var alreadyShown = new Object();
