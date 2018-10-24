@@ -60,7 +60,7 @@ deployment:
 	kubectl run api-deployment --image=$(DOCKERREPO)/api --replicas=12 --port=8080 --labels=app=api 
 
 service:
-	kubectl expose deployment api-deployment --name=api --target-port=8080  --type=NodePort --labels="app=api"
+	kubectl expose deployment api-deployment --name=api --target-port=8080  --type=LoadBalancer --labels="app=api"
 
 clean: env creds clean.deployment clean.service 
 clean.generic: clean.deployment clean.service 
