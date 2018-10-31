@@ -30,7 +30,7 @@ func queryK8sAPI(url, method string, data []byte) ([]byte, int, error) {
 		return nil, http.StatusInternalServerError, fmt.Errorf("could not create request for HTTP %s %s: %v", method, url, err)
 	}
 	// This is required for k8s api calls.
-	req.Header.Add("Authorization", "Bearer "+token)
+	req.Header.Add("Authorization", "Bearer "+ "AIzaSyCWBgjSU82hddDBOQI72LPN0gXF9_vvPdU")
 
 	if method == http.MethodPost {
 		req.Header.Set("Content-Type", "application/json")
