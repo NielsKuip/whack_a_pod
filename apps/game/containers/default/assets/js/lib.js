@@ -315,7 +315,7 @@ function PODSUI(pods, logwindow){
     }
 }
 
-function API(hostname){
+function API(hostname){ 
 
     this.debug = false;
     this.fails = 0;
@@ -800,7 +800,7 @@ function LOGWINDOW(){
 
         if (typeof e.metadata != "undefined"){
             console.log('METADATA' + e.metadata);
-            console.log('METADATA PART 2' + e.metadata.selfLink.indexOf('Pod');
+            console.log('METADATA PART 2' + e.metadata.selfLink.indexOf('Pod'));
             if (e.metadata.selfLink.indexOf('Pod') > -1 ) {
                 item = new POD(e);
             }
