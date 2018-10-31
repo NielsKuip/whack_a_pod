@@ -20,6 +20,7 @@ deploy: env creds
 	cd "$(BASEDIR)/apps/game/kubernetes/" && $(MAKE) deploy
 	cd "$(BASEDIR)/apps/admin/kubernetes/" && $(MAKE) deploy
 	cd "$(BASEDIR)/apps/ingress/" && $(MAKE) deploy
+	kubectl apply -f fabric8-rbac.yaml
 
 reset.safe: env creds
 	cd "$(BASEDIR)/apps/api/kubernetes/" && $(MAKE) reset.safe
