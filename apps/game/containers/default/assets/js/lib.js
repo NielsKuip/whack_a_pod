@@ -223,12 +223,12 @@ function POD(json){
 
 function PODSUI(pods, logwindow){
     var pods = pods;
-    console.log('PODSPDSOPDSO' + pods);
+    console.log('PODSPDSOPDSO');
     if (typeof(logwindow)==='undefined') logwindow = new LOGWINDOW();
 
     var alreadyShown = new Object();
     alreadyShown.terminating = new Object();
-
+    console.log('2');
     this.ClearTerminating = function(){
         for (var i = 0; i < pods.Count(); i++){
             var podObj = pods.Get(i);
@@ -242,10 +242,12 @@ function PODSUI(pods, logwindow){
             }
         }
     }
-
+    console.log('3');
     this.ClearMissing = function(podNames){
         var podsDOM = document.querySelectorAll('.pod'), i;
+        console.log('4');
         for (i = 0; i < podsDOM.length; ++i) {
+            console.log('5');
             if (podNames.lastIndexOf(podsDOM[i].id) < 0){
                 pods.Delete(podsDOM[i].id);
                 //TODO: uncomment.
