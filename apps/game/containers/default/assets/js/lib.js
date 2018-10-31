@@ -786,20 +786,20 @@ function LOGWINDOW(){
 
         var e = jQuery.extend(true, {}, ev);
         var item = e;
-        if (e.kind == "Pod"){
+        if (e.kind == 'Pod'){
             item = new POD(e);
         }
 
-        if (e.kind == "Node"){
+        if (e.kind == 'Node'){
             item = new NODE(e);
         }
 
-        if (e.kind == "PodList"){
+        if (e.kind == 'PodList'){
             item = new PODLIST(e);
         }
 
-        if (typeof e.metadata != "undefined"){
-            console.log('METADATA' + e.metadata);
+        if (typeof e.metadata != 'undefined'){
+            console.log('METADATA' + e.metadata.selfLink);
             console.log('METADATA PART 2' + e.metadata.selfLink.indexOf('Pod'));
             if (e.metadata.selfLink.indexOf('Pod') > -1 ) {
                 item = new POD(e);
