@@ -799,13 +799,13 @@ function LOGWINDOW(){
         }
 
         if (typeof e.metadata != "undefined"){
-            console.log("METADATA" + e.metadata);
-            console.log("METADATA PART 2" + e.metadata.selfLink.indexOf("Pod");
-            if (e.metadata.selfLink.indexOf("Pod") > -1 ) {
+            console.log('METADATA' + e.metadata);
+            console.log('METADATA PART 2' + e.metadata.selfLink.indexOf('Pod');
+            if (e.metadata.selfLink.indexOf('Pod') > -1 ) {
                 item = new POD(e);
             }
     
-            if (e.metadata.selfLink.indexOf("Node") > -1 ) {
+            if (e.metadata.selfLink.indexOf('Node') > -1 ) {
                 item = new NODE(e);
             }
         }
