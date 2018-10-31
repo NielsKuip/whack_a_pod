@@ -30,7 +30,7 @@ func queryK8sAPI(url, method string, data []byte) ([]byte, int, error) {
 		return nil, http.StatusInternalServerError, fmt.Errorf("could not create request for HTTP %s %s: %v", method, url, err)
 	}
 	// This is required for k8s api calls.
-	req.Header.Add("Authorization", "Bearer "+ "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJkZWZhdWx0Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9zZWNyZXQubmFtZSI6ImRlZmF1bHQtdG9rZW4taDI4ZnYiLCJrdWJlcm5ldGVzLmlvL3NlcnZpY2VhY2NvdW50L3NlcnZpY2UtYWNjb3VudC5uYW1lIjoiZGVmYXVsdCIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjAzNmU4ZTk4LWRkMDgtMTFlOC1hNzllLTQyMDEwYWE0MDBlZiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDpkZWZhdWx0OmRlZmF1bHQifQ.hpsE1bkz6XIZMwFx8yo8LxmFWjRMSa6UvfN41IdQL7E53EpOu3E3GiYZtJCjrG7pvWQgyjn0e6d-PQxjibxzU42WD_rWxl7QbGsjalgrnRoCRroaxYBJs94wRP9sLcCxZS5lVUBNH0oyvYxfmfd_hjAhd95PTg_uzEY2kcf7xfUI-k78tDSjCyDJEs4TFAUS0kWIqe-pRFlOAcOlgfVqA8lPBQl_wdSftNei23FipHaZBYVUNOT3lA9kOUnKcCFS_8ktA8OJRChaiBHs7MBXT5kz5MlgOjpJvZKm_B88tMUkdcKzvnI2EzFiKcoRo61XsiP1biZE-MqTsJqz6Ymhsg==")
+	req.Header.Add("Authorization", "Bearer "+ token)
 
 	if method == http.MethodPost {
 		req.Header.Set("Content-Type", "application/json")
