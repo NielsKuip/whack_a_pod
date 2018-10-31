@@ -296,6 +296,7 @@ function PODSUI(pods, logwindow){
     this.DrawPods = function(json, whackHandler){
 
         var podNames = [];
+        console.log('JSON > ' + JSON.stringify(json));
         for (var i = 0; i < json.items.length; i++){
             podNames.push(json.items[i].metadata.name);
         }
@@ -785,16 +786,20 @@ function LOGWINDOW(){
 
 
         var e = jQuery.extend(true, {}, ev);
+        console.log(JSON.stringify(e));
         var item = e;
         if (e.kind == 'Pod'){
+            console.log('pod');
             item = new POD(e);
         }
 
         if (e.kind == 'Node'){
+            console.log('node');
             item = new NODE(e);
         }
 
         if (e.kind == 'PodList'){
+            console.log('podlist');
             item = new PODLIST(e);
         }
 
