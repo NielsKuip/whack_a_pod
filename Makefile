@@ -16,7 +16,7 @@ BASEDIR = $(shell pwd)
 include Makefile.properties
 
 deploy: env creds
-	kubectl apply -f fabric8-rbac.yaml
+	
 	cd "$(BASEDIR)/apps/api/kubernetes/" && $(MAKE) deploy
 	cd "$(BASEDIR)/apps/game/kubernetes/" && $(MAKE) deploy
 	cd "$(BASEDIR)/apps/admin/kubernetes/" && $(MAKE) deploy
@@ -75,6 +75,7 @@ clean.minikube.dockerhub:
 	cd "$(BASEDIR)/apps/ingress/" && $(MAKE) clean.minikube
 
 build: env creds
+	kubectl apply -f fabric8-rbac.yaml
 	cd "$(BASEDIR)/apps/api/kubernetes/" && $(MAKE) build
 	cd "$(BASEDIR)/apps/game/kubernetes/" && $(MAKE) build
 	cd "$(BASEDIR)/apps/admin/kubernetes/" && $(MAKE) build
