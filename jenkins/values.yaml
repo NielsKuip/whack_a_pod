@@ -1,7 +1,7 @@
 
 Master:
-  Image: "nielskuip/jenkins"
   Name: jenkins-master
+  Image: "nielskuip/jenkins"
   InstallPlugins:
     - kubernetes:1.12.6
     - workflow-job:2.24
