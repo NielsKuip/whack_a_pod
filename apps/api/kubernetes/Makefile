@@ -31,7 +31,7 @@ main:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o "$(BASEDIR)/../containers/main" "$(BASEDIR)/../containers/main.go"
 
 build: env main
-	gcloud container builds submit "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO)/api
+	gcloud builds submit "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO)/api
 
 build.dockerhub: main
 	docker build "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO):api
