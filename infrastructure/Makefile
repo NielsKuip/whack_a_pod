@@ -24,7 +24,8 @@ build: env build.cluster ip
 # Requests a GKE cluster
 build.cluster: 
 	-gcloud container clusters create $(CLUSTER) --num-nodes $(NODECOUNT) \
-	--disk-size=$(NODEDISKSIZE) --machine-type=$(NODETYPE) --zone=$(ZONE)
+	--disk-size=$(NODEDISKSIZE) --machine-type=$(NODETYPE) --zone=$(ZONE) \
+	--scopes=https://www.googleapis.com/auth/cloud-platform
 
 # Runs all the clean commands. 
 clean: env clean.cluster clean.repo clean.ip
