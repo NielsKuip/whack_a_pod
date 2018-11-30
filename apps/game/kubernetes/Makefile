@@ -28,7 +28,7 @@ reset.safe: env creds
 	say "app refresh complete"	
 
 build: env
-	gcloud container builds submit "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO)/game
+	gcloud builds submit "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO)/game
 
 build.dockerhub:
 	docker build "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO):game
