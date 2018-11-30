@@ -57,7 +57,7 @@ test:
 	cd 	"$(BASEDIR)/../containers" && go test
 
 deployment:
-	kubectl create deployment --image=$(DOCKERREPO)/api --replicas=12 --port=8080 --labels=app=api 
+	kubectl create deployment api-deployment --image=$(DOCKERREPO)/api --replicas=12 --port=8080 --labels=app=api 
 
 service:
 	kubectl expose deployment api-deployment --name=api --target-port=8080  --type=NodePort --labels="app=api"
