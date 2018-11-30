@@ -15,7 +15,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'make deploy'
+                /*sh 'make deploy'*/
             }
         }
     }
