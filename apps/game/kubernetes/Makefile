@@ -53,8 +53,8 @@ deploy.generic:
 deployment:
 	kubectl apply -f "$(BASEDIR)/game-deployment.yaml"
 
-service:
-	kubectl expose deployment game-deployment --name=game --target-port=8080  --type=NodePort --labels="app=game"
+#service:
+#	kubectl expose deployment game-deployment --name=game --target-port=8080  --type=NodePort --labels="app=game"
 
 clean: env creds clean.deployment clean.service 
 
