@@ -29,8 +29,6 @@ reset.safe:
 app: build deploy
 
 main:
-	echo export GOPATH
-	echo export go env GOPATH
 	go get github.com/gorilla/mux
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o "$(BASEDIR)/../containers/main" "$(BASEDIR)/../containers/main.go" "$(BASEDIR)/../containers/kubernetes.go"	
 
