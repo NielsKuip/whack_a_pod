@@ -65,8 +65,7 @@ test:
 	cd 	"$(BASEDIR)/../containers" && go test
 
 deployment:
-	kubectl run admin-deployment --image=$(DOCKERREPO)/admin --replicas=1 --port=8080 --labels=app=admin --env="APIIMAGE=$(DOCKERREPO)/api"
-
+	kubectl create -f "$(BASEDIR)/admin-deployment.yaml"
 service:
 	kubectl expose deployment admin-deployment --name=admin --target-port=8080  --type=NodePort --labels="app=admin"
 
