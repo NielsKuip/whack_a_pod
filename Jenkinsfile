@@ -4,7 +4,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 sh 'make clean'
                  sh 'make build'
             }
         }
