@@ -51,7 +51,7 @@ deploy.generic:
 	kubectl expose deployment game-deployment --name=game --target-port=8080  --type=NodePort --labels="app=game"
 
 deployment:
-	kubectl run game-deployment --image=$(DOCKERREPO)/game --replicas=4 --port=8080 --labels=app=game 
+	kubectl create -f "$(BASEDIR)/game-deployment.yaml"
 
 service:
 	kubectl expose deployment game-deployment --name=game --target-port=8080  --type=NodePort --labels="app=game"
