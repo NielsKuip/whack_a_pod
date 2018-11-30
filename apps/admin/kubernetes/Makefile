@@ -65,7 +65,7 @@ test:
 	cd 	"$(BASEDIR)/../containers" && go test
 
 deployment:
-	kubectl create -f "$(BASEDIR)/admin-deployment.yaml"
+	kubectl apply -f "$(BASEDIR)/admin-deployment.yaml"
 service:
 	kubectl expose deployment admin-deployment --name=admin --target-port=8080  --type=NodePort --labels="app=admin"
 
