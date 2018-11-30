@@ -57,7 +57,7 @@ test:
 	cd 	"$(BASEDIR)/../containers" && go test
 
 deployment:
-	kubectl create -f "$(BASEDIR)/api-deployment.yaml
+	kubectl create -f "$(BASEDIR)/api-deployment.yaml"
 
 service:
 	kubectl expose deployment api-deployment --name=api --target-port=8080  --type=NodePort --labels="app=api"
