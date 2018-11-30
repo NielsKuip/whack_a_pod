@@ -4,7 +4,7 @@ kind: Deployment
 metadata:
   name: api-deployment
 spec:
-  replicas: 1
+  replicas: 12
   selector:
     matchLabels:
       app: game
