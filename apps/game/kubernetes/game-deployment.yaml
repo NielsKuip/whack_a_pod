@@ -13,7 +13,7 @@ spec:
         app: game
     spec:
       containers:
-      - name: game-deployment
+      - name: game
         image: gcr.io/kube-224111/game:latest
         ports:
         - containerPort: 8080
