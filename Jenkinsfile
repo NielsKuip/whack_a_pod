@@ -4,9 +4,6 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                 sh 'cd /infrastructure'
-                 sh 'make build'
-                 sh 'cd ..' 
                  sh 'make build'
             }
         }
