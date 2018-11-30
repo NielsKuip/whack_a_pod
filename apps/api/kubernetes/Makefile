@@ -59,8 +59,8 @@ test:
 deployment:
 	kubectl apply -f "$(BASEDIR)/api-deployment.yaml"
 
-service:
-	kubectl expose deployment api-deployment --name=api --target-port=8080  --type=NodePort --labels="app=api"
+#service:
+#	kubectl expose deployment api-deployment --name=api --target-port=8080  --type=NodePort --labels="app=api"
 
 clean: env creds clean.deployment clean.service 
 clean.generic: clean.deployment clean.service 
