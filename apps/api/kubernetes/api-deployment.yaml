@@ -2,19 +2,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: api-deployment
+  name: admin-deployment
 spec:
-  replicas: 12
+  replicas: 1
   selector:
     matchLabels:
-      app: api
+      app: game
   template:
     metadata:
       labels:
-        app: api
+        app: game
     spec:
       containers:
-      - name: api-deployment
-        image: docker pull gcr.io/kube-224111/api:latest
+      - name: game-deployment
+        image: gcr.io/kube-224111/game:latest
         ports:
         - containerPort: 8080
