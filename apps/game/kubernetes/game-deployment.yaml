@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: game-deployment
-        image: docker pull gcr.io/kube-224111/game:latest
+        image: gcr.io/kube-224111/game:latest
         ports:
         - containerPort: 8080
