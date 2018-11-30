@@ -66,8 +66,8 @@ test:
 
 deployment:
 	kubectl apply -f "$(BASEDIR)/admin-deployment.yaml"
-#service:
-#	kubectl expose deployment admin-deployment --name=admin --target-port=8080  --type=NodePort --labels="app=admin"
+service:
+	kubectl expose deployment admin-deployment --name=admin --target-port=8080  --type=NodePort --labels="app=admin"
 
 clean: env creds clean.deployment clean.service 
 
