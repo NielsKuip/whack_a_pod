@@ -34,7 +34,7 @@ main:
 	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build -o "$(BASEDIR)/../containers/main" "$(BASEDIR)/../containers/main.go" "$(BASEDIR)/../containers/kubernetes.go"	
 
 build: env main
-	gcloud container builds submit "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO)/admin
+	gcloud builds submit "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO)/admin
 
 build.dockerhub: main
 	docker build "$(BASEDIR)/../containers/." --tag=$(DOCKERREPO):admin
