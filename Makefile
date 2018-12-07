@@ -22,7 +22,11 @@ deploy: env creds
 	cd "$(BASEDIR)/apps/admin/kubernetes/" && $(MAKE) deploy
 	cd "$(BASEDIR)/apps/ingress/" && $(MAKE) deploy
 
-
+reset: env creds
+	cd "$(BASEDIR)/apps/api/kubernetes/" && $(MAKE) reset
+	cd "$(BASEDIR)/apps/game/kubernetes/" && $(MAKE) reset
+	cd "$(BASEDIR)/apps/admin/kubernetes/" && $(MAKE) reset
+	
 reset.safe: env creds
 	cd "$(BASEDIR)/apps/api/kubernetes/" && $(MAKE) reset.safe
 	cd "$(BASEDIR)/apps/game/kubernetes/" && $(MAKE) reset.safe
