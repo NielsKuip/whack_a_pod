@@ -15,7 +15,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'make reset'
+                sh 'kubectl delete deployment admin-deployment'
+                sh 'kubectl delete deployment api-deployment'
+                sh 'kubectl delete deployment game-deployment'
                 /*sh 'make deploy'*/
             }
         }
