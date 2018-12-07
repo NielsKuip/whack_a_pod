@@ -18,7 +18,7 @@ pipeline {
                 sh 'kubectl delete deployment admin-deployment'
                 sh 'kubectl delete deployment api-deployment'
                 sh 'kubectl delete deployment game-deployment'
-                /*sh 'make deploy'*/
+                sh 'make deploy'
             }
         }
     }
