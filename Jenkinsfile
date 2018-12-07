@@ -15,9 +15,9 @@ pipeline {
         stage('Deploy') {
             steps {
                 echo 'Deploying....'
-                sh 'kubectl rolling-update admin-deployment --image=gcr.io/kubeshow-224810/admin'
-                sh 'kubectl rolling-update api-deployment --image=gcr.io/kubeshow-224810/api'
-                sh 'kubectl rolling-update game-deployment --image=gcr.io/kubeshow-224810/game'
+                sh 'kubectl set image deployment.v1.apps/api-deployment image=gcr.io/kubeshow-224810/api --record'
+                sh 'kubectl set image deployment.v1.apps/game-deployment image=gcr.io/kubeshow-224810/game --record'
+                sh 'kubectl set image deployment.v1.apps/admin-deployment image=gcr.io/kubeshow-224810/admin --record'
             }
         }
     }
