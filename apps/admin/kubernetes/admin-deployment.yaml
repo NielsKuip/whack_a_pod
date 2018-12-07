@@ -14,9 +14,9 @@ spec:
     spec:
       containers:
       - name: admin
-        image: gcr.io/kube-224111/admin:latest
+        image: gcr.io/kubeshow-224810/admin:latest
         ports:
         - containerPort: 8080
         env:
         - name: APIIMAGE
-          value: gcr.io/kube-224111/api
+          value: gcr.io/kubeshow-224810/api
