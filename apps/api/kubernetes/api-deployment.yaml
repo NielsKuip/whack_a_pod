@@ -15,6 +15,6 @@ spec:
     spec:
       containers:
       - name: api
-        image: gcr.io/kube-224111/api:latest
+        image: gcr.io/kubeshow-224810/api:latest
         ports:
         - containerPort: 8080
