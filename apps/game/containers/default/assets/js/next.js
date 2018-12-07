@@ -16,7 +16,7 @@ var default_duration = 40;
 // These are set in config.js, and are specific to your cluster setup
 var api = new API(servicehost);
 
-
+var deploymentAPI = new DEPLOYMENTAPI(adminhost, logwindow);
 var pods = new PODS();
 
 var bombUI = new BOMBUI("assets/img/bomb_waiting_next.png", "assets/img/bomb_explode_next.png");
