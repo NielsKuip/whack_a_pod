@@ -15,6 +15,7 @@ spec:
       containers:
       - name: admin
         image: gcr.io/kubeshow-224810/admin:latest
+        imagePullPolicy: "Always"
         ports:
         - containerPort: 8080
         env:
