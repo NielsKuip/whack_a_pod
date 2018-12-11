@@ -21,3 +21,5 @@ spec:
         env:
         - name: APIIMAGE
           value: gcr.io/kubeshow-224810/api
+        - name: APIPULLPOLICY
+          value: "Always"
