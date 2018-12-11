@@ -22,9 +22,9 @@ pipeline {
                 sh 'kubectl set image deployment.v1.apps/api-deployment api=gcr.io/kubeshow-224810/api:latest --record'
                 sh 'kubectl set image deployment.v1.apps/game-deployment game=gcr.io/kubeshow-224810/game:latest --record'
                 sh 'kubectl set image deployment.v1.apps/admin-deployment admin=gcr.io/kubeshow-224810/admin:latest --record'
-                sh 'kubectl apply -f /apps/admin/kubernetes/admin-deployment.yaml'
-                sh 'kubectl apply -f /apps/api/kubernetes/api-deployment.yaml'
-                sh 'kubectl apply -f /apps/game/kubernetes/game-deployment.yaml'
+                sh 'kubectl apply -f https://raw.githubusercontent.com/NielsKuip/whack_a_pod/master/apps/admin/kubernetes/admin-deployment.yaml'
+                sh 'kubectl apply -f https://raw.githubusercontent.com/NielsKuip/whack_a_pod/master/apps/game/kubernetes/game-deployment.yaml'
+                sh 'kubectl apply -f https://raw.githubusercontent.com/NielsKuip/whack_a_pod/master/apps/api/kubernetes/api-deployment.yaml'
                 
       
             }
